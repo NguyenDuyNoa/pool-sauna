@@ -8,14 +8,14 @@ const Projects = () => {
         Dự án tiêu biểu
       </h1>
       <div className="grid grid-cols-2 gap-4">
-        <CardProject />
-        <CardProject />
-        <CardProject />
-        <CardProject />
-        <CardProject />
-        <CardProject />
-        <CardProject />
-        <CardProject />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
+        <CardProject project="du-an-nha-pho" />
       </div>
       <div className="flex justify-center">
         <Pagination count={10} />
