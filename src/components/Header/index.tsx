@@ -4,7 +4,7 @@ import { Phone } from '@mui/icons-material'
 
 const Header = () => {
   const navLinks = [
-    // { href: '/', label: 'Trang chủ' },
+    { href: '/', label: 'Trang chủ' },
     { href: '/gioi-thieu', label: 'Giới thiệu' },
     { href: '/dich-vu', label: 'Dịch vụ' },
     { href: '/san-pham', label: 'Sản phẩm' },

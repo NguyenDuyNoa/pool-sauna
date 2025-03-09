@@ -1,52 +1,85 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+
+const feedbackData = [
+  {
+    id: 1,
+    name: "Anh Quang Minh",
+    project: "BIỆT THỰ VINHOMES",
+    content: "Tôi rất hài lòng với dịch vụ thiết kế và thi công hồ bơi của công ty. Đội ngũ kỹ sư chuyên nghiệp, tư vấn tận tình và có trách nhiệm. Hồ bơi được hoàn thiện đúng tiến độ, chất lượng vượt mong đợi. Không gian sống của gia đình tôi đã trở nên đẳng cấp và tiện nghi hơn rất nhiều."
+  },
+  {
+    id: 2,
+    name: "Chị Thu Hương",
+    project: "VILLA ĐÀ LẠT",
+    content: "Dịch vụ thiết kế sông hơi của công ty thực sự xuất sắc. Từ khâu tư vấn đến thi công đều rất chuyên nghiệp. Đặc biệt ấn tượng với việc đội ngũ kỹ thuật đã tối ưu được không gian và tạo nên một khu sông hơi độc đáo, phù hợp với khí hậu Đà Lạt."
+  },
+  {
+    id: 3,
+    name: "Anh Đức Thắng",
+    project: "NHÀ PHỐ QUẬN 7",
+    content: "Cảm ơn công ty đã giúp tôi hiện thực hóa ước mơ về một căn nhà phố hiện đại và tiện nghi. Thiết kế thông minh tối ưu công năng, thi công nhanh chóng và chất lượng. Đặc biệt ấn tượng với hệ thống hồ bơi mini được tích hợp hoàn hảo trên sân thượng."
+  },
+  {
+    id: 4,
+    name: "Chị Minh Anh",
+    project: "BIỆT THỰ NGHỈ DƯỠNG PHÚ QUỐC",
+    content: "Thiết kế và thi công hồ bơi vô cực của công ty thật sự xuất sắc. View nhìn ra biển tuyệt đẹp, chất lượng thi công đạt chuẩn quốc tế. Đội ngũ kỹ sư đã tư vấn rất tận tâm để chọn được giải pháp tối ưu nhất cho địa hình đặc thù của dự án."
+  },
+  {
+    id: 5,
+    name: "Anh Hoàng Nam",
+    project: "PENTHOUSE LANDMARK 81",
+    content: "Ấn tượng với thiết kế sông hơi độc đáo và sang trọng. Công ty đã xử lý xuất sắc các thách thức kỹ thuật khi thi công ở tầng cao. Chất lượng hoàn thiện rất tốt, đảm bảo an toàn tuyệt đối và tạo không gian thư giãn tuyệt vời."
+  },
+  {
+    id: 6,
+    name: "Chị Thanh Thảo",
+    project: "BIỆT THỰ COMPOUND Q9",
+    content: "Tôi đánh giá cao sự sáng tạo trong thiết kế và sự tỉ mỉ trong thi công của công ty. Khu vực hồ bơi và sông hơi được tích hợp hài hòa trong tổng thể sân vườn. Chất lượng nước luôn trong xanh nhờ hệ thống lọc hiện đại."
+  }
+];
 
 const Feedback = () => {
+  const [selectedFeedback, setSelectedFeedback] = useState(feedbackData[0]);
+
   return (
     <div className="flex flex-col gap-20 bg-bg-partner bg-gray-100 bg-repeat py-10">
       <div className="container mx-auto max-w-screen-xl ">
         <div className="flex justify-between">
           <div className="text-gray-900 text-4xl font-bold">
-            Đánh giá từ những <br /> người đã trải nghiệm
+            Đánh giá từ những <br /> khách hàng tin tưởng
             <h3 className="text-primary">,,,,,,,,</h3>
           </div>
-          <label className=" w-[488px] text-lg font-medium text-gray-600">
-            Khách hàng chia sẻ về những kỷ niệm tuyệt vời khi sử dụng dịch vụ
-            của chúng tôi.
+          <label className="w-[488px] text-lg font-medium text-gray-600">
+            Khách hàng chia sẻ về trải nghiệm và sự hài lòng khi sử dụng dịch vụ thiết kế, thi công của chúng tôi.
           </label>
         </div>
         <div className="flex gap-10">
-          <h2 className=" text-9xl text-primary">&quot;</h2>
+          <h2 className="text-9xl text-primary">&quot;</h2>
           <div className="flex flex-col gap-6">
-            <h3 className=" text-lg text-gray-900">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore a,
-              commodi nam perferendis inventore facere at repudiandae
-              voluptatibus nisi iure consequatur voluptatum cumque recusandae ad
-              eaque quaerat tenetur beatae ea!
+            <h3 className="text-lg text-gray-900">
+              {selectedFeedback.content}
             </h3>
-            <h2 className=" uppercase font-semibold text-gray-900">
-              CHỊ LÊ THỦY -
+            <h2 className="uppercase font-semibold text-gray-900">
+              {selectedFeedback.name} - {selectedFeedback.project}
             </h2>
           </div>
         </div>
         <div className="flex gap-6">
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Chị Lê Thủy
-          </button>
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Cô Minh Hòa
-          </button>
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Anh Quang Anh
-          </button>
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Chị Giang
-          </button>
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Bạn Chu Huyền
-          </button>
-          <button className=" text-gray-800 bg-[#fff8f8] p-2 rounded-full border font-medium">
-            Cô Giang
-          </button>
+          {feedbackData.map((feedback) => (
+            <button
+              key={feedback.id}
+              onClick={() => setSelectedFeedback(feedback)}
+              className={`text-gray-800 p-2 rounded-full border font-medium transition-all ${
+                selectedFeedback.id === feedback.id
+                  ? "bg-primary text-white"
+                  : "bg-[#fff8f8] hover:bg-gray-100"
+              }`}
+            >
+              {feedback.name}
+            </button>
+          ))}
         </div>
       </div>
     </div>

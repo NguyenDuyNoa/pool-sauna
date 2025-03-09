@@ -4,13 +4,14 @@ import { IMAGES } from "@/constants/images";
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import CropFreeIcon from '@mui/icons-material/CropFree';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import Link from "next/link";
 
-const CardProject = () => {
+const CardProject = ({ project }: { project : string }) => {
   return (
-    <div className="relative flex w-full h-[200px] border border-gray-300 rounded-lg overflow-hidden">
+    <Link href={`/du-an/${project}`} className="relative flex w-full h-[200px] border border-gray-300 rounded-lg overflow-hidden">
       <div className="flex-1 p-4 flex flex-col justify-between">
         <div className="flex flex-col gap-2">
-          <h2 className="text-title1  uppercase text-gray-900">Hồ bơi</h2>
+          <h2 className="text-title1  uppercase text-gray-900">Dự án nhà phố</h2>
           <p className="text-base text-gray-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             quos.
@@ -40,7 +41,7 @@ const CardProject = () => {
           className="w-full object-cover"
         />
       </div>
-    </div>
+    </Link>
   );
 };
 
